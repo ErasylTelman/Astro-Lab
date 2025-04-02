@@ -28,7 +28,7 @@ style=alphabetic,
 \newcommand\groupno{Group 3+10}       %%%%% group number
 \newcommand\names{Pratyush Singh,\\
                   Proshmit Dasputpa,\\
-                  Erasyl Telman}        %%%%% full names
+                  Yerassyl Telman}        %%%%% full names
 \newcommand\expdate{07/03/2025}    %%%%% date of experiment day
 
 \begin{document}
@@ -83,6 +83,25 @@ In this laboratory work numerically we solve various N-body problems using integ
 
 \section{Theory}\label{sec:theory}
 \subsection{Classical N-Body Problem}
+
+Classical N-body problem describes motion of N point masses in their mutual gravitational field. Each body at some time $t$ has mass $m_i$, position $\textbf{r}_i$, and velocity $\textbf{v}_i$. Hence, the Hamiltonian of the system is given as:
+
+\begin{equation}
+	H = \sum_{i=1}^{N} \frac{\textbf{p}_i^2}{2m_i} - \sum_{i=1}^{N} \sum_{j=i+1}^{N} \frac{Gm_i m_j}{|\textbf{q}_i - \textbf{q}_j|}
+\end{equation}
+
+with canonical momentum and position as $\textbf{p}_i = m_i \textbf{v}_i$ and $\textbf{q}_i = \textbf{r}_i$ respectively.
+
+The equation of motion is calculated from the Hamiltonian as:
+
+\begin{equation}
+	\dot{\textbf{q}}_i(t) = \frac{\partial H}{\partial \textbf{p}_i} \xrightarrow{} \frac{d \textbf{r}_i}{dt} = \textbf{v}_i
+\end{equation}
+
+\begin{equation}
+	\dot{\textbf{p}}_i(t) = -\frac{\partial H}{\partial \textbf{q}_i} \xrightarrow{} \frac{d \textbf{v}_i}{dt} = \textbf{a}_i
+\end{equation}
+
 
 \subsection{Time Integrators}
 \label{integrators}
